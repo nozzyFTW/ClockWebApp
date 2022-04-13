@@ -1,5 +1,6 @@
 var noon = 12;
 
+// Getting it to show the current time on the page
 var showCurrentTime = function()
 {
     // display the string on the webpage
@@ -13,10 +14,6 @@ var showCurrentTime = function()
     var meridian = "AM";
  
     // Set hours
-	  if (hours >= noon)
-	  {
-		  meridian = "PM";
-	  }
 
 	  if (hours > noon)
 	  {
@@ -29,14 +26,16 @@ var showCurrentTime = function()
         minutes = "0" + minutes;
     }
  
-    // Set Seconds
-    if (seconds < 10)
-    {
-        seconds = "0" + seconds;
-    }
- 
     // put together the string that displays the time
-    var clockTime = hours + ':' + minutes + ':' + seconds + " " + meridian + "!";
+    var clockTime = hours + ':' + minutes;
  
     clock.innerText = clockTime;
 };
+
+// Getting the clock to increment on its own and change out messages and pictures
+var updateClock = function() 
+{
+  var time = new Date().getHours();
+  showCurrentTime();
+};
+updateClock();
