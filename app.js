@@ -81,17 +81,18 @@ setInterval(() => {updateDate()}, 1000);
 ////////////////////////
 var showMoreBtn = document.querySelector(".showMore");
 var gamesList = document.querySelector(".gamesList");
-var moreGamesList = document.getElementsByClassName("moreGames");
+var moreGamesList = document.querySelector(".moreGames");
 
 showMoreBtn.addEventListener("click", (e) => {
   gamesList.classList.toggle("show-more");
   if (showMoreBtn.innerHTML === 'Show More <i class="fa fa-chevron-down"></i>')
   {
     showMoreBtn.innerHTML = 'Show Less <i class="fa fa-chevron-up"></i>';
-    moreGamesList.removeProperty('display')
+    moreGamesList.setAttribute('style', 'display: revert;');
   }
   else
   {
     showMoreBtn.innerHTML = 'Show More <i class="fa fa-chevron-down"></i>';
+    moreGamesList.setAttribute('style', 'display: none;')
   }
 });
