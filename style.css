@@ -41,12 +41,22 @@ section {
 }
 
 #clock {
-  margin: 10px 0;
+  display: inline-block;
+  margin: 10px 25px;
   color: #ccc;
   font-size: 60pt;
   line-height: 1.0;
   text-align: center;
-  position: relative;
+  float: right;
+}
+
+#date {
+  display: inline-block;
+  margin: 10px 25px;
+  color: #ccc;
+  font-size: 60pt;
+  line-height: 1.0;
+  text-align: center;
 }
 
 #wrap {
@@ -89,4 +99,12 @@ a {
 
 a:hover {
   color: #fff;
+}
+
+.moreGames {
+  display: none;
+}
+
+.showMore {
+  cursor: pointer;
 }
