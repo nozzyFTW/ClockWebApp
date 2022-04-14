@@ -13,7 +13,7 @@ html, body, div, h1, h2, section, ul, li {
 body {
   font-size: 18px;
   line-height: 1.5;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   color: #999;
   background: #000;
@@ -46,6 +46,7 @@ section {
   font-size: 60pt;
   line-height: 1.0;
   text-align: center;
+  position: relative;
 }
 
 #wrap {
@@ -73,6 +74,8 @@ section:nth-of-type(3) {
 
 section h2 {
   color: #fff;
+  font-size: 25px;
+  font-weight: 900 !important;
 }
 
 ul {

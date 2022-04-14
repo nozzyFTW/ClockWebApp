@@ -38,4 +38,4 @@ var updateClock = function()
   var time = new Date().getHours();
   showCurrentTime();
 };
-updateClock();
+setInterval(() => {updateClock()}, 1000);
