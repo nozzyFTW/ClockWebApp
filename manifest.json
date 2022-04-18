@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+
+  "name": "New Tab",
+  "description": "New Tab Project by nozzy",
+  "version": "1.0",
+  "author": "nozzy",
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}
