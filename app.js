@@ -96,3 +96,97 @@ showMoreBtn.addEventListener("click", (e) => {
     moreGamesList.setAttribute('style', 'display: none;')
   }
 });
+
+/////////////
+//  MODAL  //
+/////////////
+var modal = document.getElementById("modalStopwatch");
+var btn = document.getElementById("stopwatch");
+var exit = document.getElementById("close");
+var stopwatchBool = false;
+
+btn.onclick = function()
+{
+  modal.setAttribute('style', 'display: block;');
+  if (stopwatchBool == true)
+  {
+    modal.removeAttribute('style', 'display: block;');
+    stopwatchBool = false;
+  }
+  stopwatchBool = true;
+}
+
+exit.onclick = function()
+{
+  modal.removeAttribute('style', 'display: block;');
+}
+
+window.onclick = function(event)
+{
+  if (event.target == modal)
+  {
+    modal.removeAttribute('style', 'display: block;');
+  }
+};
+
+/////////////////
+//  STOPWATCH  //
+/////////////////
+window.onload = function()
+{
+  var watchSeconds = 00;
+  var watchTens = 00;
+  var appendTens = document.getElementById("watchTens");
+  var appendSeconds = document.getElementById("watchSeconds");
+  var buttonStart = document.getElementById("button-start");
+  var buttonStop = document.getElementById("button-stop");
+  var buttonReset = document.getElementById("button-reset");
+  var interval;
+
+  buttonStart.onclick = function()
+  {
+    clearInterval(interval);
+    interval = setInterval(startTimer, 10);
+  }
+
+  buttonStop.onclick = function()
+  {
+    clearInterval(interval);
+  }
+
+  buttonReset.onclick = function()
+  {
+    clearInterval(interval);
+    watchTens = "00";
+    watchSeconds = "00";
+    appendTens.innerHTML = watchTens;
+    appendSeconds.innerHTML = watchSeconds;
+  }
+
+  function startTimer()
+  {
+    watchTens++;
+
+    if (watchTens <= 9)
+    {
+      appendTens.innerHTML = "0" + watchTens;
+    }
+
+    if (watchTens > 9)
+    {
+      appendTens.innerHTML = watchTens;
+    }
+
+    if (watchTens > 99)
+    {
+      watchSeconds++;
+      appendSeconds.innerHTML = "0" + watchSeconds;
+      watchTens = 0;
+      appendTens.innerHTML = "0" + 0;
+    }
+
+    if (watchSeconds > 9) {
+      appendSeconds.innerHTML = watchSeconds;
+    }
+  }
+};
